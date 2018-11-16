@@ -74,7 +74,8 @@ apigClientFactory.newClient = function () {
     defaultAcceptType: config.defaultAcceptType,
     systemClockOffset: config.systemClockOffset,
     retries: config.retries,
-    retryCondition: config.retryCondition
+    retryCondition: config.retryCondition,
+    proxy: config.proxy
   };
 
   var authType = 'NONE';
@@ -88,7 +89,8 @@ apigClientFactory.newClient = function () {
     defaultAcceptType: config.defaultAcceptType,
     retries: config.retries,
     retryCondition: config.retryCondition,
-    headers: config.headers
+    headers: config.headers,
+    proxy: config.proxy
   };
 
   var apiGatewayClient = _apiGatewayClient2.default.newClient(simpleHttpClientConfig, sigV4ClientConfig);

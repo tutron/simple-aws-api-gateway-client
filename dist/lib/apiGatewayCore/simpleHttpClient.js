@@ -20,10 +20,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                                                                                                                                                                                                                                                                    */
 /* eslint max-len: ["error", 100]*/
 
-var _request = require('request');
-
-var _request2 = _interopRequireDefault(_request);
-
 var _utils = require('./utils');
 
 var _utils2 = _interopRequireDefault(_utils);
@@ -32,6 +28,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var simpleHttpClientFactory = {};
 simpleHttpClientFactory.newClient = function (config) {
+  var _request = require('request');
+
   function buildCanonicalQueryString(queryParams) {
     // Build a properly encoded query string from a QueryParam object
     if (Object.keys(queryParams).length < 1) {
@@ -90,7 +88,7 @@ simpleHttpClientFactory.newClient = function (config) {
       simpleHttpRequest.proxy = proxy;
     }
 
-    return request(simpleHttpRequest, callback);
+    return _request(simpleHttpRequest, callback);
   };
 
   return simpleHttpClient;

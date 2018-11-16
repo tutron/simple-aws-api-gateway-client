@@ -1,6 +1,6 @@
 {
   "name": "simple-aws-api-gateway-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple module for AWS API Gateway client with proxy setup",
   "repository": {
     "type": "git",

@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _request = require('request');
-
-var _request2 = _interopRequireDefault(_request);
-
 var _sha = require('crypto-js/sha256');
 
 var _sha2 = _interopRequireDefault(_sha);
@@ -30,24 +26,25 @@ var _utils2 = _interopRequireDefault(_utils);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+var sigV4ClientFactory = {}; /*
+                              * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+                              *
+                              * Licensed under the Apache License, Version 2.0 (the "License").
+                              * You may not use this file except in compliance with the License.
+                              * A copy of the License is located at
+                              *
+                              *  http://aws.amazon.com/apache2.0
+                              *
+                              * or in the "license" file accompanying this file. This file is distributed
+                              * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+                              * express or implied. See the License for the specific language governing
+                              * permissions and limitations under the License.
+                              */
 /* eslint max-len: ["error", 100]*/
 
-var sigV4ClientFactory = {};
 sigV4ClientFactory.newClient = function (config) {
+  var _request = require('request');
+
   var AWS_SHA_256 = 'AWS4-HMAC-SHA256';
   var AWS4_REQUEST = 'aws4_request';
   var AWS4 = 'AWS4';
@@ -241,7 +238,7 @@ sigV4ClientFactory.newClient = function (config) {
       signedRequest.proxy = proxy;
     }
 
-    return request(signedRequest, callback);
+    return _request(signedRequest, callback);
   };
 
   return awsSigV4Client;

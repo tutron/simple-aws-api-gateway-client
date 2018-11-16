@@ -14,11 +14,12 @@
  */
 /* eslint max-len: ["error", 100]*/
 
-import request from 'request';
 import utils from './utils';
 
 const simpleHttpClientFactory = {};
 simpleHttpClientFactory.newClient = (config) => {
+  var _request = require('request');
+
   function buildCanonicalQueryString(queryParams) {
     // Build a properly encoded query string from a QueryParam object
     if (Object.keys(queryParams).length < 1) {
@@ -78,7 +79,7 @@ simpleHttpClientFactory.newClient = (config) => {
       simpleHttpRequest.proxy = proxy;
     }
 
-    return request(simpleHttpRequest, callback);
+    return _request(simpleHttpRequest, callback);
   };
 
   return simpleHttpClient;

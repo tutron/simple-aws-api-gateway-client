@@ -87,8 +87,10 @@ var apigClient = apigClientFactory.newClient({
 });
 ```
 
-Note: This project is customized from https://github.com/kndt84/aws-api-gateway-client
 
-#Customization Includes:
-    1) Removed Axios module and used simple request
-    2) Added Support for Proxy
+# Note:
+ This project is customized from https://github.com/kndt84/aws-api-gateway-client
+
+# Customization Includes:
+ 1) Removed Axios module and used simple request
+ 2) Added Support for Proxy

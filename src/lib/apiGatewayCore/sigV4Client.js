@@ -14,7 +14,6 @@
  */
 /* eslint max-len: ["error", 100]*/
 
-import request from 'request';
 import SHA256 from 'crypto-js/sha256';
 import encHex from 'crypto-js/enc-hex';
 import HmacSHA256 from 'crypto-js/hmac-sha256';
@@ -23,6 +22,8 @@ import utils from './utils';
 
 const sigV4ClientFactory = {};
 sigV4ClientFactory.newClient = function(config) {
+  var _request = require('request');
+
   let AWS_SHA_256 = 'AWS4-HMAC-SHA256';
   let AWS4_REQUEST = 'aws4_request';
   let AWS4 = 'AWS4';
@@ -244,7 +245,7 @@ sigV4ClientFactory.newClient = function(config) {
       signedRequest.proxy = proxy;
     }
 
-    return request(signedRequest, callback);
+    return _request(signedRequest, callback);
   };
 
   return awsSigV4Client;
