@@ -58,8 +58,7 @@ var callback = function(error, response, body){
 } 
 
 apigClient.invokeApi(pathParams, pathTemplate, method, additionalParams, body, callback);
-    
-    ```
+```
 
 # Using AWS IAM for authorization
 To initialize the SDK with AWS Credentials use the code below. Note, if you use credentials all requests to the API will be signed. This means you will have to set the appropiate CORS accept-* headers for each request.
@@ -91,5 +90,5 @@ var apigClient = apigClientFactory.newClient({
 Note: This project is customized from https://github.com/kndt84/aws-api-gateway-client
 
 #Customization Includes:
-1) Removed Axios module and used simple request
-2) Added Support for Proxy
+    1) Removed Axios module and used simple request
+    2) Added Support for Proxy
